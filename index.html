@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rama Jaya Farm - Segar Alami, Langsung Dari Kebun Petani</title>
+    <link rel="icon" type="image/png" href="elemen/logo_KKN.png" />
+    <!-- Tailwind CSS v3 with Forms & Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Caveat (playful script like reference) & Plus Jakarta Sans / Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              script: ["Caveat", "cursive"],
+            },
+            colors: {
+              forest: {
+                900: "#142618",
+                800: "#1b3420",
+                700: "#284e31",
+                600: "#386c44",
+              },
+              olive: {
+                DEFAULT: "#526640",
+                light: "#657d50",
+                dark: "#3f4f31",
+                tint: "#f4f6f0",
+              },
+              warm: {
+                cream: "#FAF7F0",
+                sand: "#F2ECE1",
+                card: "#FCFAF6",
+              },
+              accent: {
+                tomato: "#E2583E",
+                berry: "#C23B4E",
+                amber: "#E8A338",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style data-purpose="custom-typography-and-effects">
+      .font-script-hero {
+        font-family: "Caveat", cursive;
+        letter-spacing: -0.01em;
+        line-height: 1.08;
+      }
+
+      /* Subtle text shadow for high contrast over dark hero image */
+      .hero-text-shadow {
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+      }
+
+      /* Smooth marquee or clean scrolling trust banner */
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 35s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-warm-cream text-stone-800 font-sans antialiased selection:bg-olive selection:text-white flex flex-col min-h-screen lg:h-screen overflow-x-hidden overflow-y-auto lg:overflow-hidden"
+  >
+    <!-- BEGIN: HeroSection -->
+    <!-- KODE BARU: Menggunakan flex-1 agar menyesuaikan sisa layar -->
+    <section
+      class="relative w-full flex-1 bg-forest-900 text-white flex flex-col justify-between overflow-hidden"
+      data-purpose="hero-banner"
+    >
+      <!-- Hero Background Image & Layered Dark Gradient -->
+      <div class="absolute inset-0 z-0">
+        <img
+          alt="Tumpukan aneka sayur dan buah segar di pasar petani"
+          class="w-full h-full object-cover object-center filter brightness-100 contrast-110"
+          src="elemen/RamaJaya.jpg"
+        />
+        <!-- Lapisan hitam transparan tipis agar teks putih tetap terbaca tapi foto jernih -->
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      <!-- BEGIN: NavigationBar -->
+      <header
+        class="relative z-30 w-full pt-6 px-6 lg:px-14"
+        data-purpose="primary-navigation"
+      >
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Left: Brand Logo -->
+          <a class="group flex items-center gap-2 text-white" href="#">
+            <span
+              class="text-4xl lg:text-5xl font-bold font-script tracking-tight text-white group-hover:text-amber-200 transition"
+              >Rama Jaya Farm</span
+            >
+            <span
+              class="inline-block w-2 h-2 rounded-full bg-emerald-400 mb-2"
+            ></span>
+          </a>
+          <!-- Center: Primary Nav Links -->
+          <div
+            class="hidden md:flex items-center gap-9 text-stone-200 text-sm font-medium tracking-wide"
+          >
+            <a
+              class="hover:text-white transition-colors duration-200"
+              href="katalog.html"
+              >Belanja</a
+            >
+            <a
+              class="hover:text-white transition-colors duration-200"
+              href="katalog.html"
+              >Petani Mitra</a
+            >
+            <a
+              class="hover:text-white transition-colors duration-200"
+              href="katalog.html"
+              >Cara Kerja</a
+            >
+            <a
+              class="hover:text-white transition-colors duration-200"
+              href="katalog.html"
+              >Jurnal Kebun</a
+            >
+          </div>
+          <!-- Right: Cart & CTA Pill Button -->
+          <div class="flex items-center gap-5">
+            <!-- Cart Icon with dynamic counter badge -->
+            <button
+              aria-label="Keranjang Belanja"
+              class="relative p-2 text-stone-200 hover:text-white transition"
+              type="button"
+            >
+              <svg
+                class="w-6 h-6 stroke-current"
+                fill="none"
+                stroke-width="1.8"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.189-.578-1.119-1.243l1.263-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <span
+                class="absolute top-1 right-0 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold bg-accent-tomato text-white rounded-full"
+                >3</span
+              >
+            </button>
+            <!-- Start your box CTA -->
+            <a
+              class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-olive hover:bg-olive-light shadow-md hover:shadow-lg transition-all duration-200 tracking-wide"
+              href="#paket-langganan"
+            >
+              Daftar / Login
+            </a>
+          </div>
+        </nav>
+        <div
+          class="flex md:hidden items-center gap-6 mt-4 overflow-x-auto text-stone-200 text-sm font-medium tracking-wide pb-2 whitespace-nowrap scrollbar-hide"
+        >
+          <a
+            class="hover:text-white transition-colors duration-200 shrink-0"
+            href="katalog.html"
+            >Belanja</a
+          >
+          <a
+            class="hover:text-white transition-colors duration-200 shrink-0"
+            href="#petani"
+            >Petani Mitra</a
+          >
+          <a
+            class="hover:text-white transition-colors duration-200 shrink-0"
+            href="#cara-kerja"
+            >Cara Kerja</a
+          >
+          <a
+            class="hover:text-white transition-colors duration-200 shrink-0"
+            href="#jurnal"
+            >Jurnal Kebun</a
+          >
+        </div>
+      </header>
+      <!-- END: NavigationBar -->
+      <!-- BEGIN: HeroBodyContent -->
+      <!-- KODE BARU: Mengubah pt-10 pb-20 menjadi py-6 agar konten lebih padat -->
+      <main
+        class="relative z-20 max-w-7xl mx-auto w-full px-6 lg:px-14 py-6 flex-grow flex flex-col justify-center"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+          <!-- Left Hero Column: Announcement, Headline, Search Bar, Pills -->
+          <div class="lg:col-span-8 flex flex-col items-start space-y-6">
+            <!-- Delivery region badge pill -->
+            <div
+              class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-900/60 backdrop-blur-md border border-white/20 text-xs font-medium text-stone-200"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
+              <span
+                >Kini melayani pengantaran di area Sumenep &amp;
+                sekitarnya</span
+              >
+            </div>
+            <!-- Hero Headline with cursive accent matching Root & Row style -->
+            <!-- KODE BARU: Mengubah ukuran teks lg:text-[5.4rem] menjadi lg:text-6xl -->
+            <h1
+              class="hero-text-shadow font-script-hero text-5xl sm:text-6xl md:text-7xl lg:text-6xl font-bold tracking-tight text-white leading-none"
+            >
+              Panen Premium<br />
+              <span class="text-amber-100 italic">Spesial untuk taretan.</span>
+            </h1>
+            <!-- Subtitle / Value Proposition -->
+            <p
+              class="max-w-xl text-stone-200 text-sm sm:text-base md:text-lg leading-relaxed font-normal hero-text-shadow"
+            >
+              Selada hidroponik renyah dan melon manis pilihan. Dipetik langsung
+              dari Greenhouse desa Kasengan tiap pagi, siap diantar segar ke
+              rumah Anda.
+            </p>
+            <!-- Search Bar Container with integrated button -->
+            <form
+              class="w-full max-w-xl mt-3"
+              onsubmit="event.preventDefault()"
+              role="search"
+            >
+              <div
+                class="relative flex items-center bg-white/95 backdrop-blur-md rounded-full p-1.5 shadow-2xl border border-white/40 focus-within:ring-2 focus-within:ring-olive-light"
+              >
+                <div class="pl-4 pr-2 text-stone-400">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  class="w-full bg-transparent border-0 text-stone-800 text-xs sm:text-sm placeholder-stone-400 focus:ring-0 focus:outline-none"
+                  placeholder="Cari selada, melon atau sayuran lainnya..."
+                  type="text"
+                />
+                <button
+                  class="px-6 py-2.5 rounded-full bg-olive hover:bg-olive-dark text-white text-xs sm:text-sm font-semibold transition shadow-sm hover:shadow"
+                  type="submit"
+                >
+                  Cari
+                </button>
+              </div>
+            </form>
+            <!-- Quick Category Tags / Quick Picks Pills -->
+            <!--<div class="flex flex-wrap items-center gap-2 pt-1" data-purpose="quick-category-pills">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/55 backdrop-blur-md text-stone-200 hover:text-white hover:bg-stone-800/80 border border-white/15 text-xs transition duration-150">
+<span>🍓</span> Berries
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/55 backdrop-blur-md text-stone-200 hover:text-white hover:bg-stone-800/80 border border-white/15 text-xs transition duration-150">
+<span>🥬</span> Kotak Sayur
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/55 backdrop-blur-md text-stone-200 hover:text-white hover:bg-stone-800/80 border border-white/15 text-xs transition duration-150">
+<span>🥚</span> Telur &amp; Dairy
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/55 backdrop-blur-md text-stone-200 hover:text-white hover:bg-stone-800/80 border border-white/15 text-xs transition duration-150">
+<span>🍯</span> Dapur Alami
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/55 backdrop-blur-md text-stone-200 hover:text-white hover:bg-stone-800/80 border border-white/15 text-xs transition duration-150">
+<span>🌿</span> Rempah &amp; Herbal
+            </button>
+</div>-->
+          </div>
+          <!-- Right Hero Column: Key Metrics / Stats matching the layout -->
+          <div
+            class="lg:col-span-4 flex flex-col items-start lg:items-end justify-end space-y-6 text-left lg:text-right pb-2"
+          >
+            <div
+              class="border-l-2 lg:border-l-0 lg:border-r-2 border-emerald-500/60 pl-3 lg:pl-0 lg:pr-3"
+            >
+              <p
+                class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white"
+              >
+                100%
+              </p>
+              <p
+                class="text-xs uppercase tracking-wider text-stone-300 font-medium"
+              >
+                Bebas Pestisida
+              </p>
+            </div>
+            <div
+              class="border-l-2 lg:border-l-0 lg:border-r-2 border-emerald-500/60 pl-3 lg:pl-0 lg:pr-3"
+            >
+              <p
+                class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white"
+              >
+                80%
+              </p>
+              <p
+                class="text-xs uppercase tracking-wider text-stone-300 font-medium"
+              >
+                Produk Kasengan
+              </p>
+            </div>
+            <div
+              class="border-l-2 lg:border-l-0 lg:border-r-2 border-emerald-500/60 pl-3 lg:pl-0 lg:pr-3"
+            >
+              <p
+                class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white italic font-script"
+              >
+                24 jam
+              </p>
+              <p
+                class="text-xs uppercase tracking-wider text-stone-300 font-medium"
+              >
+                Panen Segar Harian
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- END: HeroBodyContent -->
+      <!-- Organic Wave Divider to smooth into the cream body -->
+      <div class="relative z-20 w-full overflow-hidden leading-none">
+        <svg
+          class="relative block w-full h-12 md:h-20 text-olive-dark fill-current"
+          preserveaspectratio="none"
+          viewbox="0 0 1200 120"
+        >
+          <path
+            d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,60 L1200,120 L0,120 Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <!-- END: HeroSection -->
+    <!-- BEGIN: TrustPillBanner -->
+    <section
+      class="w-full bg-olive-dark text-stone-100 py-3.5 overflow-hidden border-b border-olive/30 shadow-inner"
+      data-purpose="trust-marquee"
+    >
+      <div
+        class="marquee-track flex items-center gap-10 text-xs tracking-wider uppercase font-semibold"
+      >
+        <span>✦ Zaskia Aprilia Putri</span>
+        <span>✦ 100% Produk Petani Kasengan Terverifikasi</span>
+        <span>✦ Panen Segar Setiap Pagi</span>
+        <span>✦ KKNT Kelompok 20, Desa Kasengan</span>
+        <span>✦ Uniba Madura</span>
+        <span>✦ Garansi Ganti Baru Jika Tidak Segar</span>
+        <span>✦ Ramah Lingkungan &amp; Kemasan Biodegradable</span>
+        <!-- Repeating duplicate set for infinite seamless loop -->
+        <span>✦ Zaskia Aprilia Putri</span>
+        <span>✦ 100% Produk Petani Kasengan Terverifikasi</span>
+        <span>✦ Panen Segar Setiap Pagi</span>
+        <span>✦ KKNT Kelompok 20, Desa Kasengan</span>
+        <span>✦ Uniba Madura</span>
+        <span>✦ Garansi Ganti Baru Jika Tidak Segar</span>
+        <span>✦ Ramah Lingkungan &amp; Kemasan Biodegradable</span>
+      </div>
+    </section>
+    <!-- END: TrustPillBanner -->
+    <!-- END: Footer -->
+    <!-- BEGIN: Pop-up Login Modal (Khusus Halaman Utama / page.html) -->
+    <div
+      id="login-modal"
+      class="fixed inset-0 w-screen h-screen z-[100] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300"
+    >
+      <!-- Latar Belakang Gelap (Backdrop) -->
+      <div
+        id="modal-backdrop"
+        class="absolute inset-0 w-full h-full bg-black/60 backdrop-blur-sm cursor-pointer"
+      ></div>
+
+      <!-- Kotak Pop-up -->
+      <div
+        class="relative bg-warm-cream rounded-3xl shadow-2xl w-full max-w-sm mx-auto my-auto overflow-hidden transform scale-95 transition-transform duration-300 border border-olive-light/30 p-6 sm:p-8 flex flex-col items-center text-center"
+      >
+        <!-- Tombol Silang (Close) -->
+        <button
+          type="button"
+          id="close-modal-btn"
+          class="absolute top-4 right-4 p-2 text-stone-400 hover:text-stone-700 transition"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Ikon User -->
+        <div
+          class="w-14 h-14 bg-olive-tint rounded-full flex items-center justify-center text-olive mb-4 shadow-inner"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- Teks Ajakan -->
+        <h3
+          class="text-3xl font-bold font-script-hero text-forest-900 mb-2 tracking-wide"
+        >
+          Halo, Taretan!
+        </h3>
+        <p class="text-sm text-stone-500 mb-6 leading-relaxed">
+          Daftar atau masuk sekarang untuk mendapatkan informasi panen tercepat
+          dan harga khusus pelanggan setia Kasengan.
+        </p>
+
+        <!-- Tombol Aksi -->
+        <div class="w-full space-y-3">
+          <!-- Mengarah ke login.html -->
+          <a
+            href="login.html"
+            class="block w-full py-3 rounded-full bg-olive hover:bg-olive-dark text-white font-semibold text-sm transition shadow-md hover:shadow-lg"
+          >
+            Login Akun
+          </a>
+          <!-- Menjebak ke login.html juga (Tag sudah dibenarkan menjadi <a>) -->
+          <a
+            href="login.html"
+            class="block w-full py-3 rounded-full bg-transparent hover:bg-stone-200/50 text-stone-500 font-medium text-sm transition"
+          >
+            Nanti Saja
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- END: Pop-up Login Modal -->
+
+    <!-- Script Timer Pop-up Anti-Macet -->
+    <!-- Script Timer Pop-up Anti-Macet & Mode "Jebakan" -->
+    <script>
+      let popupTimer;
+
+      function siapkanPopUp() {
+        const modal = document.getElementById("login-modal");
+        const modalBox = modal.querySelector(".relative");
+
+        // 1. Reset posisi pop-up ke kondisi tersembunyi tiap kali halaman dibuka
+        modal.classList.remove("flex", "opacity-100");
+        modal.classList.add("hidden", "opacity-0");
+        modalBox.classList.remove("scale-100");
+        modalBox.classList.add("scale-95");
+
+        const showModal = () => {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          setTimeout(() => {
+            modal.classList.remove("opacity-0");
+            modal.classList.add("opacity-100");
+            modalBox.classList.remove("scale-95");
+            modalBox.classList.add("scale-100");
+          }, 50);
+        };
+
+        // Tombol X dan backdrop sengaja dikosongkan agar tidak bisa ditutup manual (Wajib Login/Nanti Saja)
+        const closeModalBtn = document.getElementById("close-modal-btn");
+        const backdrop = document.getElementById("modal-backdrop");
+        if (closeModalBtn) closeModalBtn.style.display = "none"; // Sembunyikan tombol silang biar makin greget
+        if (backdrop) backdrop.onclick = null; // Matikan fungsi klik di luar kotak
+
+        // 3. Bersihkan timer yang lama, lalu mulai hitung dari awal
+        clearTimeout(popupTimer);
+        popupTimer = setTimeout(() => {
+          showModal();
+        }, 3000); // Muncul dalam 3 detik
+      }
+
+      window.addEventListener("pageshow", () => {
+        siapkanPopUp();
+      });
+    </script>
+  </body>
+</html>

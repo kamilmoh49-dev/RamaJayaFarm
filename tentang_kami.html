@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tentang Kami - Rama Jaya Farm</title>
+    <link rel="icon" type="image/png" href="elemen/logo_KKN.png" />
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Definisi Animasi Slide Masuk dari Kanan */
+      @keyframes slideInRight {
+        0% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              script: ["Caveat", "cursive"],
+            },
+            colors: {
+              forest: {
+                900: "#142618",
+                800: "#1b3420",
+                700: "#284e31",
+              },
+              olive: {
+                DEFAULT: "#526640",
+                light: "#657d50",
+                dark: "#3f4f31",
+              },
+              warm: {
+                cream: "#FAF7F0",
+                card: "#FCFAF6",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-warm-cream text-stone-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Gabungan Header dan Konten Atas agar Background Menyatu -->
+    <section class="relative w-full bg-forest-900 text-white flex flex-col overflow-hidden pb-8 lg:pb-20">
+      
+      <!-- Latar Belakang Gambar Tembus Pandang -->
+      <div class="absolute inset-0 z-0">
+        <img src="elemen/RamaJaya.jpg" alt="Background Greenhouse" class="w-full h-full object-cover filter brightness-100 contrast-110">
+        <!-- Lapisan gelap transparan -->
+        <div class="absolute inset-0 bg-forest-900/80 mix-blend-multiply"></div>
+      </div>
+
+      <!-- BEGIN: NavigationBar (Transparan) -->
+      <header class="relative z-30 w-full pt-4 sm:pt-6 px-4 sm:px-6 lg:px-14">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Left: Brand Logo -->
+          <a class="flex items-center gap-2 group" href="index.html">
+            <span class="text-2xl sm:text-3xl lg:text-4xl font-bold font-script tracking-tight text-white group-hover:text-amber-200 transition">
+              Rama Jaya Farm
+            </span>
+            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 mb-2"></span>
+          </a>
+
+          <!-- Center: Primary Nav Links -->
+          <div class="hidden md:flex items-center gap-9 text-stone-200 text-sm font-medium tracking-wide">
+            <a class="hover:text-white transition-colors duration-200" href="index.html">Home</a>
+            <a class="text-white font-bold transition-colors duration-200" href="tentang_kami.html">Tentang Kami</a>
+            <a class="hover:text-white transition-colors duration-200" href="index.html#produk">Produk</a>
+            <a class="hover:text-white transition-colors duration-200" href="artikel.html">Artikel</a>
+            <a class="hover:text-white transition-colors duration-200" href="galeri.html">Galeri</a>
+          </div>
+
+          <!-- Right: Cart & Mobile Menu -->
+          <div class="flex items-center gap-3 sm:gap-5">
+            <a aria-label="Keranjang Belanja" class="relative p-1.5 sm:p-2 text-stone-200 hover:text-white transition" href="index.html#produk">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+                <path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.189-.578-1.119-1.243l1.263-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <button aria-label="Buka Menu" class="md:hidden p-1.5 sm:p-2 text-stone-200 hover:text-white transition" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+              <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden mt-3 max-w-7xl mx-auto bg-forest-900/95 backdrop-blur-md rounded-2xl border border-white/15 shadow-2xl overflow-hidden mb-2">
+          <a class="block px-5 py-2.5 text-stone-200 hover:text-white hover:bg-white/10 text-xs font-medium transition border-b border-white/10" href="index.html">Home</a>
+          <a class="block px-5 py-2.5 text-white bg-white/5 text-xs font-bold transition border-b border-white/10" href="tentang_kami.html">Tentang Kami</a>
+          <a class="block px-5 py-2.5 text-stone-200 hover:text-white hover:bg-white/10 text-xs font-medium transition border-b border-white/10" href="index.html#produk">Produk</a>
+          <a class="block px-5 py-2.5 text-stone-200 hover:text-white hover:bg-white/10 text-xs font-medium transition border-b border-white/10" href="artikel.html">Artikel</a>
+          <a class="block px-5 py-2.5 text-stone-200 hover:text-white hover:bg-white/10 text-xs font-medium" href="galeri.html">Galeri</a>
+        </div>
+      </header>
+      <!-- END: NavigationBar -->
+
+      <!-- Konten Kisah & Latar Belakang (Tetap Kanan-Kiri di HP & Desktop) -->
+      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-14 py-6 sm:py-12 lg:py-16 flex flex-row items-center gap-3 sm:gap-8 lg:gap-16">
+        
+        <!-- Bagian Kiri: Teks Kisah -->
+        <div class="w-1/2 space-y-2 sm:space-y-6 text-left">
+          <h1 class="text-xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Tentang Rama Jaya
+          </h1>
+          
+          <!-- Ornamen Pembatas (Dotted & Daun) -->
+          <div class="flex items-center justify-start gap-2 sm:gap-3 opacity-90">
+            <div class="h-0 w-6 sm:w-12 border-b sm:border-b-2 border-dotted border-emerald-400"></div>
+            <svg class="w-4 h-4 sm:w-6 sm:h-6 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.09,3.5c-2.48,0-4.83,1.38-6.19,3.61c-1.35-2.22-3.7-3.61-6.19-3.61C2.08,3.5,0,5.88,0,8.81 c0,4.78,4.7,7.18,9.75,11.39c0.23,0.19,0.51,0.3,0.81,0.3h0.01c0.3,0,0.58-0.11,0.81-0.3c5.05-4.21,9.75-6.61,9.75-11.39 C21.12,5.88,19.04,3.5,17.09,3.5z M10.56,18.52c-4.14-3.46-7.85-5.63-7.85-9.71c0-1.5,1.15-2.73,2.67-2.73 c1.6,0,3.13,1.06,3.87,2.69h2.72c0.74-1.63,2.27-2.69,3.87-2.69c1.52,0,2.67,1.23,2.67,2.73C18.42,12.89,14.71,15.06,10.56,18.52z"></path>
+            </svg>
+            <div class="h-0 w-6 sm:w-12 border-b sm:border-b-2 border-dotted border-emerald-400"></div>
+          </div>
+
+          <div class="text-stone-200 text-[10px] sm:text-sm lg:text-base leading-relaxed space-y-1.5 sm:space-y-4">
+            <p>
+              Berawal dari kepedulian terhadap potensi agrikultur lokal, <strong>Rama Jaya Farm</strong> hadir di Desa Kasengan, Kecamatan Manding, Kabupaten Sumenep. Kami melihat kebutuhan masyarakat akan sayuran segar berkualitas sering harus didatangkan dari luar daerah.
+            </p>
+            <p class="hidden sm:block">
+              Melalui pemanfaatan teknologi <em>greenhouse</em> dan sistem tanam hidroponik modern, kami membuktikan tanah Madura mampu menghasilkan komoditas premium seperti selada keriting renyah dan melon golden manis secara konsisten.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bagian Kanan: Foto -->
+       <!-- Bagian Kanan: Foto dengan Animasi Masuk dari Kanan -->
+        <div class="w-1/2 overflow-hidden animate-[slideInRight_1s_ease-out_forwards] opacity-0">
+          <img 
+            src="elemen/GH_kasengan.jpg" 
+            alt="Greenhouse Rama Jaya" 
+            class="w-full h-auto object-cover rounded-xl sm:rounded-3xl shadow-2xl border border-white/20 aspect-[4/3] transform hover:scale-110 hover:rotate-1 hover:brightness-110 transition-all duration-500 ease-in-out cursor-pointer"
+          >
+        </div>
+      </div>
+    </section>
+        <!-- Call to Action Kotak Bawah -->
+         <!-- BEGIN: Seksi Peta Lokasi Greenhouse -->
+    <section class="relative z-20 w-full bg-warm-cream py-8 sm:py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-14">
+        
+        <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-stone-200 overflow-hidden flex flex-col lg:flex-row transform hover:shadow-2xl transition duration-300">
+          <div class="w-full lg:w-1/3 p-6 sm:p-10 flex flex-col justify-center space-y-6 bg-forest-900 text-white relative overflow-hidden">
+            <!-- Ornamen Daun Transparan di Background -->
+            <svg class="absolute -bottom-10 -right-10 w-40 h-40 text-white opacity-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.09,3.5c-2.48,0-4.83,1.38-6.19,3.61c-1.35-2.22-3.7-3.61-6.19-3.61C2.08,3.5,0,5.88,0,8.81 c0,4.78,4.7,7.18,9.75,11.39c0.23,0.19,0.51,0.3,0.81,0.3h0.01c0.3,0,0.58-0.11,0.81-0.3c5.05-4.21,9.75-6.61,9.75-11.39 C21.12,5.88,19.04,3.5,17.09,3.5z M10.56,18.52c-4.14-3.46-7.85-5.63-7.85-9.71c0-1.5,1.15-2.73,2.67-2.73 c1.6,0,3.13,1.06,3.87,2.69h2.72c0.74-1.63,2.27-2.69,3.87-2.69c1.52,0,2.67,1.23,2.67,2.73C18.42,12.89,14.71,15.06,10.56,18.52z"></path></svg>
+            
+            <div class="space-y-2 relative z-10">
+              <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider rounded-full border border-emerald-500/30">
+                Kunjungi Kami
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Lokasi Kebun</h2>
+            </div>
+
+            <div class="space-y-4 text-stone-300 text-xs sm:text-sm relative z-10">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <p>Desa Kasengan, Kecamatan Manding,<br>Kabupaten Sumenep, Madura - Jawa Timur</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p>Buka Setiap Hari: 06.00 - 16.00 WIB</p>
+              </div>
+            </div>
+
+            <!-- Tombol Buka di Aplikasi Google Maps -->
+            <a href="https://maps.google.com/?q=Kasengan,Manding,Sumenep" target="_blank" class="relative z-10 inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-semibold rounded-xl transition shadow-lg w-fit mt-2">
+              Buka di Google Maps
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <!-- Bagian Kanan: Google Maps Iframe -->
+          <!-- Bagian Kanan: Google Maps Iframe -->
+          <div class="w-full lg:w-2/3 h-64 sm:h-80 lg:h-auto bg-stone-200">
+            <iframe 
+              src="https://maps.google.com/maps?q=-6.974076,113.836766&hl=id&z=17&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full object-cover filter contrast-100"
+            ></iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- END: Seksi Peta Lokasi Greenhouse -->
+        <!-- Call to Action Kotak Bawah (Bentuk Kotak Sempurna) -->
+        <div class="bg-gradient-to-r from-forest-900 to-forest-700 text-white rounded-none p-6 sm:p-12 text-center space-y-4 sm:space-y-6 shadow-xl">
+          <h3 class="text-xl sm:text-3xl font-bold">Ingin Merasakan Segarnya Panen Langsung dari Kasengan?</h3>
+          <p class="text-stone-300 text-xs sm:text-base max-w-xl mx-auto">
+            Dapatkan selada hidroponik renyah dan melon manis pilihan untuk keluarga atau bisnis kuliner Anda hari ini.
+          </p>
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <a href="index.html#produk" class="px-6 sm:px-8 py-2.5 sm:py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-full transition shadow-lg text-xs sm:text-sm">
+              Lihat Katalog Produk
+            </a>
+            <a href="https://wa.me/6289673117115" target="_blank" class="px-6 sm:px-8 py-2.5 sm:py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition border border-white/20 text-xs sm:text-sm">
+              Hubungi Petani (WhatsApp)
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#131e12] text-stone-400 border-t border-emerald-950 text-[11px] sm:text-xs py-6 sm:py-8">
+      <div class="max-w-7xl mx-auto px-4 text-center space-y-1.5 sm:space-y-2">
+        <p>© 2026 Rama Jaya Farm. Greenhouse Desa Kasengan, Kec. Manding, Kab. Sumenep, Madura.</p>
+        <p class="text-emerald-400 font-medium">Inovasi Pertanian Modern untuk Ketahanan Pangan Lokal.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

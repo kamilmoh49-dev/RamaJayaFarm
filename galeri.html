@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Galeri Kegiatan - Rama Jaya Farm</title>
+    <link rel="icon" type="image/png" href="elemen/logo_KKN.png" />
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              script: ["Caveat", "cursive"],
+            },
+            colors: {
+              forest: {
+                900: "#142618",
+                800: "#1b3420",
+                700: "#284e31",
+              },
+              olive: {
+                DEFAULT: "#526640",
+                dark: "#3f4f31",
+              },
+              warm: {
+                cream: "#FAF7F0",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .font-script-hero {
+        font-family: "Caveat", cursive;
+      }
+      .hero-text-shadow {
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+      }
+      
+      /* Ini kode penggerak animasi yang sebelumnya tertinggal */
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 35s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+  </head>
+  
+  <body class="bg-warm-cream text-stone-800 font-sans antialiased selection:bg-olive selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+    
+    <!-- Hero Section dengan Efek PARALLAX (bg-fixed) -->
+    <section class="relative w-full h-[45vh] min-h-[350px] bg-[url('elemen/RamaJaya.jpg')] bg-fixed bg-center bg-cover flex flex-col overflow-hidden">
+      
+      <!-- Overlay Gelap Transparan -->
+      <div class="absolute inset-0 bg-forest-900/70 mix-blend-multiply z-0"></div>
+      
+      <!-- BEGIN: NavigationBar -->
+      <header class="relative z-30 w-full pt-6 px-6 lg:px-14">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+          <a class="group flex items-center gap-2 text-white" href="index.html">
+            <span class="text-3xl lg:text-4xl font-bold font-script tracking-tight text-white group-hover:text-amber-200 transition">Rama Jaya Farm</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mb-2"></span>
+          </a>
+          
+          <div class="hidden md:flex items-center gap-9 text-stone-200 text-sm font-medium tracking-wide">
+            <a class="hover:text-white transition-colors duration-200" href="index.html">Home</a>
+            <a class="hover:text-white transition-colors duration-200" href="tentang_kami.html">Tentang Kami</a>
+            <a class="hover:text-white transition-colors duration-200" href="index.html#produk">Produk</a>
+            <a class="hover:text-white transition-colors duration-200" href="artikel.html">Artikel</a>
+            <!-- Teks Galeri Aktif -->
+            <a class="text-white font-bold transition-colors duration-200" href="galeri.html">Galeri</a>
+          </div>
+          
+          <div class="flex items-center gap-5">
+            <a aria-label="Keranjang Belanja" class="relative p-2 text-stone-200 hover:text-white transition" href="index.html#produk">
+              <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+                <path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.189-.578-1.119-1.243l1.263-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <button aria-label="Buka Menu" class="md:hidden p-2 text-stone-200 hover:text-white transition" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+              <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+        
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 max-w-7xl mx-auto bg-forest-900/95 backdrop-blur-md rounded-2xl border border-white/15 shadow-2xl overflow-hidden">
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="index.html">Home</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="tentang_kami.html">Tentang Kami</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="index.html#produk">Produk</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="artikel.html">Artikel</a>
+          <a class="block px-5 py-3 text-white bg-white/5 text-sm font-bold transition" href="galeri.html">Galeri</a>
+        </div>
+      </header>
+      
+      <!-- Judul Halaman -->
+      <div class="relative z-20 flex-grow flex flex-col items-center justify-center text-center px-4">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight hero-text-shadow mb-3">
+          Galeri Kegiatan
+        </h1>
+        <p class="text-stone-300 text-sm sm:text-base max-w-2xl hero-text-shadow">
+          Jejak langkah dan kontribusi mahasiswa KKNT Kelompok 20 di Greenhouse Desa Kasengan.
+        </p>
+      </div>
+      
+    </section>
+    
+    <!-- GRID GALERI MOSAIK -->
+    <!-- GRID GALERI MOSAIK -->
+    <main class="w-full bg-warm-cream py-12 sm:py-24 flex-grow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <!-- Filter Kategori (Hanya Visual) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+          <span class="px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-forest-900 text-white text-[10px] sm:text-xs font-semibold cursor-default shadow-md">Semua Foto</span>
+          <span class="px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-[10px] sm:text-xs font-medium cursor-default">Perawatan</span>
+          <span class="px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-[10px] sm:text-xs font-medium cursor-default">Panen</span>
+          <span class="px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-[10px] sm:text-xs font-medium cursor-default">Edukasi</span>
+        </div>
+
+        <!-- PERBAIKAN: grid-cols-2 untuk HP, auto-rows disesuaikan -->
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 auto-rows-[160px] sm:auto-rows-[250px] lg:auto-rows-[300px]">
+          
+          <!-- Foto 1 (Lebar Memanjang 2 Kolom di HP & Laptop) -->
+          <div class="col-span-2 group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <img src="" alt="Kegiatan KKN" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-8">
+              <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Panen Bersama</span>
+              <h3 class="text-white text-base sm:text-2xl font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Panen Perdana Melon Golden</h3>
+            </div>
+          </div>
+
+          <!-- Foto 2 (Kotak Standar 1 Kolom) -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <img src="" alt="Kegiatan KKN" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Perawatan</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Cek Nutrisi Hidroponik</h3>
+            </div>
+          </div>
+
+          <!-- Foto 3 (Kotak Standar 1 Kolom) -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <img src="" alt="Kegiatan KKN" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Edukasi</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Sosialisasi Warga</h3>
+            </div>
+          </div>
+
+          <!-- Foto 4 (Tinggi/Memanjang ke Bawah 2 Baris di HP & Laptop) -->
+          <div class="row-span-2 group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <img src="" alt="Kegiatan KKN" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-8">
+              <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Tim KKNT</span>
+              <h3 class="text-white text-base sm:text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Kelompok 20 Univ. Bahaudin Mudhary</h3>
+            </div>
+          </div>
+
+          <!-- Foto 5 (Kotak Standar 1 Kolom) -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <img src="" alt="Kegiatan KKN" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Instalasi</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Pasang Pipa Selada</h3>
+            </div>
+          </div>
+
+          <!-- Foto 6 (Kotak Standar 1 Kolom) -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <img src="" alt="Kegiatan KKN" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Perawatan</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Pembersihan Gulma</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+    
+    <!-- Running Text -->
+    <section class="w-full bg-olive-dark text-stone-100 py-3 overflow-hidden border-t border-olive/30 mt-auto">
+      <div class="marquee-track flex items-center gap-10 text-[10px] sm:text-xs tracking-wider uppercase font-semibold">
+        <span>✦ Greenhouse Kasengan</span><span>✦ Rama Jaya Farm</span><span>✦ Kelompok 20 KKNT</span><span>✦ Moh Kamil</span><span>✦ Univ. Bahaudin Mudhary </span><span>✦ Informatika-Manajemen</span>
+        <span>✦ Greenhouse Kasengan</span><span>✦ Rama Jaya Farm</span><span>✦ Kelompok 20 KKNT</span><span>✦ Moh Kamil</span><span>✦ Univ. Bahaudin Mudhary </span><span>✦ Informatika-Manajemen</span>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-[#131e12] text-stone-400 text-[10px] sm:text-xs py-6 sm:py-8">
+      <div class="max-w-7xl mx-auto px-4 text-center space-y-1.5 sm:space-y-2">
+        <p>© 2026 Rama Jaya Farm. Greenhouse Desa Kasengan, Kec. Manding, Kab. Sumenep, Madura.</p>
+        <p class="text-emerald-400 font-medium">Inovasi Pertanian Modern untuk Ketahanan Pangan Lokal.</p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Artikel & Tips - Rama Jaya Farm</title>
+    <link rel="icon" type="image/png" href="elemen/logo_KKN.png" />
+    <!-- Tailwind CSS v3 with Forms & Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              script: ["Caveat", "cursive"],
+            },
+            colors: {
+              forest: {
+                900: "#142618",
+                800: "#1b3420",
+                700: "#284e31",
+                600: "#386c44",
+              },
+              olive: {
+                DEFAULT: "#526640",
+                dark: "#3f4f31",
+              },
+              warm: {
+                cream: "#FAF7F0",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .font-script-hero {
+        font-family: "Caveat", cursive;
+      }
+      .hero-text-shadow {
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+      }
+      
+      /* Ini kode penggerak animasi yang sebelumnya tertinggal */
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 35s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+  </head>
+  
+  <body class="bg-warm-cream text-stone-800 font-sans antialiased selection:bg-olive selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+    
+    <!-- Hero Section dengan Efek PARALLAX (bg-fixed) -->
+    <!-- Ganti 'elemen/RamaJaya.jpg' dengan foto lain jika ingin gambar background berbeda -->
+    <section class="relative w-full h-[50vh] min-h-[400px] bg-[url('elemen/RamaJaya.jpg')] bg-fixed bg-center bg-cover flex flex-col overflow-hidden">
+      
+      <!-- Overlay Gelap Transparan -->
+      <div class="absolute inset-0 bg-forest-900/60 mix-blend-multiply z-0"></div>
+      
+      <!-- BEGIN: NavigationBar -->
+      <header class="relative z-30 w-full pt-6 px-6 lg:px-14">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+          <a class="group flex items-center gap-2 text-white" href="index.html">
+            <span class="text-3xl lg:text-4xl font-bold font-script tracking-tight text-white group-hover:text-amber-200 transition">Rama Jaya Farm</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mb-2"></span>
+          </a>
+          
+          <div class="hidden md:flex items-center gap-9 text-stone-200 text-sm font-medium tracking-wide">
+            <a class="hover:text-white transition-colors duration-200" href="index.html">Home</a>
+            <a class="hover:text-white transition-colors duration-200" href="tentang_kami.html">Tentang Kami</a>
+            <a class="hover:text-white transition-colors duration-200" href="index.html#produk">Produk</a>
+            <!-- Teks Artikel di-bold dan dibuat putih terang sebagai penanda aktif -->
+            <a class="text-white font-bold transition-colors duration-200" href="artikel.html">Artikel</a>
+            <a class="hover:text-white transition-colors duration-200" href="galeri.html">Galeri</a>
+          </div>
+          
+          <div class="flex items-center gap-5">
+            <a aria-label="Keranjang Belanja" class="relative p-2 text-stone-200 hover:text-white transition" href="index.html#produk">
+              <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+                <path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.189-.578-1.119-1.243l1.263-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <button aria-label="Buka Menu" class="md:hidden p-2 text-stone-200 hover:text-white transition" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+              <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+        
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 max-w-7xl mx-auto bg-forest-900/95 backdrop-blur-md rounded-2xl border border-white/15 shadow-2xl overflow-hidden">
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="index.html">Home</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="tentang_kami.html">Tentang Kami</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="index.html#produk">Produk</a>
+          <a class="block px-5 py-3 text-white bg-white/5 text-sm font-bold transition border-b border-white/10" href="artikel.html">Artikel</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition" href="galeri.html">Galeri</a>
+        </div>
+      </header>
+      
+      <!-- Judul Halaman di Tengah Hero -->
+      <div class="relative z-20 flex-grow flex items-center justify-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight hero-text-shadow">
+          Artikel & Tips
+        </h1>
+      </div>
+      
+    </section>
+    <!-- DAFTAR ARTIKEL (Berbentuk Kartu/Kotak Bergaris) -->
+    <main class="w-full bg-warm-cream py-16 sm:py-24 flex-grow">
+      <div class="max-w-5xl mx-auto px-6 space-y-8 sm:space-y-10">
+        
+        <!-- Kartu Artikel 1 -->
+        <article class="flex flex-col md:flex-row gap-6 md:gap-8 group bg-white border border-stone-200 rounded-3xl p-4 sm:p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+          <!-- Gambar Kiri (Tanpa Border) -->
+          <div class="relative w-full md:w-5/12 shrink-0 h-56 sm:h-64 overflow-hidden rounded-2xl bg-stone-100 flex items-center justify-center">
+            <img src="" alt="Ilustrasi Melon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- Label Tanggal -->
+            <div class="absolute bottom-0 right-0 bg-white px-4 py-2 sm:px-5 sm:py-3 text-center rounded-tl-2xl shadow-sm">
+              <span class="block text-xl sm:text-2xl font-black text-forest-900 leading-none">12</span>
+              <span class="block text-xs sm:text-sm font-medium text-stone-500 mt-0.5">Okt</span>
+            </div>
+          </div>
+          <!-- Konten Kanan -->
+          <div class="w-full md:w-7/12 flex flex-col justify-between py-2">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-forest-900 mb-4 group-hover:text-emerald-700 transition">
+                Manfaat Melon Golden Untuk Kesehatan: 10 Khasiat Yang Terbukti
+              </h2>
+              <p class="text-stone-500 text-sm sm:text-base leading-relaxed line-clamp-3">
+                Melon golden bukan hanya manis dan menyegarkan sebagai hidangan pencuci mulut, tetapi juga kaya akan vitamin C dan antioksidan yang sangat baik untuk menjaga imunitas tubuh. Dibandingkan dengan melon biasa, varietas golden ini memiliki tekstur renyah yang khas...
+              </p>
+            </div>
+            <div class="mt-6 text-right">
+              <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-forest-900 hover:bg-[#89A482] text-white rounded-lg transition-colors shadow-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kartu Artikel 2 -->
+        <article class="flex flex-col md:flex-row gap-6 md:gap-8 group bg-white border border-stone-200 rounded-3xl p-4 sm:p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+          <!-- Gambar Kiri -->
+          <div class="relative w-full md:w-5/12 shrink-0 h-56 sm:h-64 overflow-hidden rounded-2xl bg-stone-100 flex items-center justify-center">
+            <img src="" alt="Ilustrasi Selada" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- Label Tanggal -->
+            <div class="absolute bottom-0 right-0 bg-white px-4 py-2 sm:px-5 sm:py-3 text-center rounded-tl-2xl shadow-sm">
+              <span class="block text-xl sm:text-2xl font-black text-forest-900 leading-none">05</span>
+              <span class="block text-xs sm:text-sm font-medium text-stone-500 mt-0.5">Okt</span>
+            </div>
+          </div>
+          <!-- Konten Kanan -->
+          <div class="w-full md:w-7/12 flex flex-col justify-between py-2">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-forest-900 mb-4 group-hover:text-emerald-700 transition">
+                Cara Menyimpan Selada Hidroponik Agar Tetap Renyah Seminggu Penuh
+              </h2>
+              <p class="text-stone-500 text-sm sm:text-base leading-relaxed line-clamp-3">
+                Banyak yang mengeluh selada cepat layu jika disimpan di dalam kulkas. Padahal, dengan teknik membungkus tisu dapur dan menyimpannya di wadah kedap udara, selada hidroponik tanpa pestisida dari Kasengan bisa bertahan tetap renyah hingga tujuh hari...
+              </p>
+            </div>
+            <div class="mt-6 text-right">
+              <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-forest-900 hover:bg-[#89A482] text-white rounded-lg transition-colors shadow-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kartu Artikel 3 -->
+        <article class="flex flex-col md:flex-row gap-6 md:gap-8 group bg-white border border-stone-200 rounded-3xl p-4 sm:p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+          <!-- Gambar Kiri -->
+          <div class="relative w-full md:w-5/12 shrink-0 h-56 sm:h-64 overflow-hidden rounded-2xl bg-stone-100 flex items-center justify-center">
+            <img src="" alt="Ilustrasi Greenhouse" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- Label Tanggal -->
+            <div class="absolute bottom-0 right-0 bg-white px-4 py-2 sm:px-5 sm:py-3 text-center rounded-tl-2xl shadow-sm">
+              <span class="block text-xl sm:text-2xl font-black text-forest-900 leading-none">28</span>
+              <span class="block text-xs sm:text-sm font-medium text-stone-500 mt-0.5">Sep</span>
+            </div>
+          </div>
+          <!-- Konten Kanan -->
+          <div class="w-full md:w-7/12 flex flex-col justify-between py-2">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-forest-900 mb-4 group-hover:text-emerald-700 transition">
+                Mengapa Memilih Produk Sayur Hidroponik Lokal? Ini 3 Alasan Utamanya
+              </h2>
+              <p class="text-stone-500 text-sm sm:text-base leading-relaxed line-clamp-3">
+                Mendukung petani lokal di Madura tidak hanya berdampak pada perputaran ekonomi daerah, tetapi juga menjamin kesegaran sayuran yang tersaji di meja makan Anda. Sayuran dari luar daerah seringkali kehilangan banyak nutrisi karena proses distribusi yang panjang...
+              </p>
+            </div>
+            <div class="mt-6 text-right">
+              <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-forest-900 hover:bg-[#89A482] text-white rounded-lg transition-colors shadow-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-[#131e12] text-stone-400 border-t border-emerald-950 text-[11px] sm:text-xs py-6 sm:py-8 mt-auto">
+      <div class="max-w-7xl mx-auto px-4 text-center space-y-1.5 sm:space-y-2">
+        <p>© 2026 Rama Jaya Farm. Greenhouse Desa Kasengan, Kec. Manding, Kab. Sumenep, Madura.</p>
+        <p class="text-emerald-400 font-medium">Inovasi Pertanian Modern untuk Ketahanan Pangan Lokal.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

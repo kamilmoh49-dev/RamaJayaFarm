@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rama Panji Farm - Segar Alami, Langsung Dari Kebun Petani</title>
+    <link rel="icon" type="image/png" href="elemen/logo_KKN.png" />
+    <!-- Tailwind CSS v3 with Forms & Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              script: ["Caveat", "cursive"],
+            },
+            colors: {
+              forest: {
+                900: "#142618",
+                800: "#1b3420",
+                700: "#284e31",
+                600: "#386c44",
+              },
+              olive: {
+                DEFAULT: "#526640",
+                light: "#657d50",
+                dark: "#3f4f31",
+                tint: "#f4f6f0",
+              },
+              warm: {
+                cream: "#FAF7F0",
+                sand: "#F2ECE1",
+                card: "#FCFAF6",
+              },
+              accent: {
+                tomato: "#E2583E",
+                berry: "#C23B4E",
+                amber: "#E8A338",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .font-script-hero {
+        font-family: "Caveat", cursive;
+        letter-spacing: -0.01em;
+        line-height: 1.08;
+      }
+      .hero-text-shadow {
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 35s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+  </head>
+  
+  <body class="bg-warm-cream text-stone-800 font-sans antialiased selection:bg-olive selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+    
+    <!-- Hero Section -->
+    <section class="relative w-full min-h-[90vh] bg-forest-900 text-white flex flex-col justify-between overflow-hidden">
+      
+      <!-- Hero Background -->
+      <div class="absolute inset-0 z-0">
+        <img
+          alt="Tumpukan sayur segar"
+          class="w-full h-full object-cover object-center filter brightness-100 contrast-110"
+          src="elemen/RamaJaya.jpg"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      
+      <!-- BEGIN: NavigationBar -->
+      <header class="relative z-30 w-full pt-6 px-6 lg:px-14">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+          <a class="group flex items-center gap-2 text-white" href="index.html">
+            <span class="text-4xl lg:text-5xl font-bold font-script tracking-tight text-white group-hover:text-amber-200 transition">Rama Jaya Farm</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mb-2"></span>
+          </a>
+          
+          <div class="hidden md:flex items-center gap-9 text-stone-200 text-sm font-medium tracking-wide">
+            <a class="text-white font-bold transition-colors duration-200" href="index.html">Home</a>
+            <a class="hover:text-white transition-colors duration-200" href="tentang_kami.html">Tentang Kami</a>
+            <a class="hover:text-white transition-colors duration-200" href="#produk">Produk</a>
+            <a class="hover:text-white transition-colors duration-200" href="artikel.html">Artikel</a>
+            <a class="hover:text-white transition-colors duration-200" href="galeri.html">Galeri</a>
+          </div>
+          
+          <div class="flex items-center gap-5">
+            <a aria-label="Keranjang Belanja" class="relative p-2 text-stone-200 hover:text-white transition" href="#produk">
+              <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+                <path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.189-.578-1.119-1.243l1.263-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <button aria-label="Buka Menu" class="md:hidden p-2 text-stone-200 hover:text-white transition" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+              <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+        
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 max-w-7xl mx-auto bg-forest-900/95 backdrop-blur-md rounded-2xl border border-white/15 shadow-2xl overflow-hidden">
+          <a class="block px-5 py-3 text-white bg-white/5 text-sm font-bold transition border-b border-white/10" href="index.html">Home</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="tentang_kami.html">Tentang Kami</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="#produk">Produk</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition border-b border-white/10" href="artikel.html">Artikel</a>
+          <a class="block px-5 py-3 text-stone-200 hover:text-white hover:bg-white/10 text-sm font-medium transition" href="galeri.html">Galeri</a>
+        </div>
+      </header>
+      
+      <!-- Hero Body -->
+      <main class="relative z-20 max-w-7xl mx-auto w-full px-6 lg:px-14 py-8 flex-grow flex flex-col justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+          
+          <div class="lg:col-span-8 flex flex-col items-start space-y-5">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-900/60 backdrop-blur-md border border-white/20 text-xs font-medium text-stone-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Kini melayani pengantaran di area Sumenep &amp; sekitarnya</span>
+            </div>
+            
+            <h1 class="hero-text-shadow font-script-hero text-5xl sm:text-6xl md:text-7xl lg:text-6xl font-bold tracking-tight text-white leading-none">
+              Panen Premium<br />
+              <span class="text-amber-100 italic">Spesial untuk taretan.</span>
+            </h1>
+            
+            <p class="max-w-xl text-stone-200 text-sm sm:text-base leading-relaxed font-normal hero-text-shadow">
+              Selada hidroponik renyah dan melon manis pilihan. Dipetik langsung dari Greenhouse desa Kasengan tiap pagi, siap diantar segar ke rumah Anda.
+            </p>
+            
+            <!-- Form Daftar Antrean Panen -->
+            <form class="w-full max-w-xl mt-2" onsubmit="window.open('https://wa.me/6281234567890?text=Halo%20admin%20Rama%20Jaya%20Farm,%20tolong%20masukkan%20nomor%20saya%20ke%20daftar%20antrean,%20kabari%20kalau%20Melon%20Golden%20sudah%20siap%20panen%20ya!', '_blank'); return false;">
+              <div class="relative flex items-center bg-white/95 backdrop-blur-md rounded-full p-1.5 shadow-2xl border border-white/40 focus-within:ring-2 focus-within:ring-olive-light">
+                <div class="pl-4 pr-2 text-emerald-600">
+                  <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                  </svg>
+                </div>
+                <input class="w-full bg-transparent border-0 text-stone-800 text-xs sm:text-sm placeholder-stone-400 focus:ring-0 focus:outline-none" placeholder="Masukkan nomor WA untuk info panen..." type="text" required />
+                <button class="px-5 py-2.5 rounded-full bg-olive hover:bg-olive-dark text-white text-xs sm:text-sm font-semibold transition shadow-sm hover:shadow whitespace-nowrap" type="submit">
+                  Kabari Saya
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-end space-y-5 text-left lg:text-right">
+            <div class="border-l-2 lg:border-l-0 lg:border-r-2 border-emerald-500/60 pl-3 lg:pl-0 lg:pr-3">
+              <p class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white">100%</p>
+              <p class="text-[10px] uppercase tracking-wider text-stone-300 font-medium">Bebas Pestisida</p>
+            </div>
+            <div class="border-l-2 lg:border-l-0 lg:border-r-2 border-emerald-500/60 pl-3 lg:pl-0 lg:pr-3">
+              <p class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white">80%</p>
+              <p class="text-[10px] uppercase tracking-wider text-stone-300 font-medium">Produk Kasengan</p>
+            </div>
+            <div class="border-l-2 lg:border-l-0 lg:border-r-2 border-emerald-500/60 pl-3 lg:pl-0 lg:pr-3">
+              <p class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white italic font-script">24 jam</p>
+              <p class="text-[10px] uppercase tracking-wider text-stone-300 font-medium">Panen Segar Harian</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      <!-- PERBAIKAN: Warna wave disesuaikan dengan hex #89A482 dari gambar -->
+      <div class="relative z-20 w-full overflow-hidden leading-none mt-4">
+        <svg class="relative block w-full h-8 md:h-12 text-[#89A482] fill-current" preserveaspectratio="none" viewbox="0 0 1200 120">
+          <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,60 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+    
+    <!-- PERBAIKAN: Background Katalog menggunakan custom warna #89A482 dan warna teks disesuaikan -->
+    <section id="produk" class="w-full bg-[#89A482] pt-10 pb-16 scroll-mt-6">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+          <span class="px-3 py-1.5 rounded-full bg-white/40 text-forest-900 text-[10px] font-bold tracking-wider uppercase border border-white/50">
+            Katalog Panen
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight">
+            Tersedia Hari Ini
+          </h2>
+          <p class="text-forest-800 font-medium text-xs sm:text-sm">
+            Pilih hasil panen segar hidroponik kami. Pesan via WhatsApp, kami siapkan yang terbaik.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Produk 1: Selada -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-xl transition-all duration-300 group flex flex-col">
+            <div class="relative h-44 overflow-hidden bg-stone-100">
+              <div class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-white/90 backdrop-blur-sm text-emerald-700 text-[10px] font-bold rounded-full shadow-sm">
+                Segar Harian
+              </div>
+              <img src="elemen/" alt="Selada Hidroponik" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="p-5 flex flex-col flex-grow space-y-3">
+              <div class="flex-grow">
+                <h3 class="text-lg font-bold text-forest-900 mb-1">Selada Keriting Hidroponik</h3>
+                <p class="text-stone-500 text-xs line-clamp-2">Renyah, manis, bebas pestisida. Cocok untuk dimakan.</p>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-stone-100">
+                <div class="flex flex-col">
+                  <span class="text-[9px] text-stone-400 uppercase font-semibold">Harga</span>
+                  <span class="text-base font-extrabold text-olive-dark">Rp - <span class="text-[10px] font-normal text-stone-500">/ kg</span></span>
+                </div>
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20mau%20pesan%20Selada%20Hidroponik%20dong!" target="_blank" class="p-2.5 bg-emerald-100 text-emerald-700 hover:bg-emerald-600 hover:text-white rounded-lg transition duration-200">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produk 2: Melon -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-xl transition-all duration-300 group flex flex-col">
+            <div class="relative h-44 overflow-hidden bg-stone-100">
+               <div class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-amber-400 text-amber-900 text-[10px] font-bold rounded-full shadow-sm">
+                Terlaris
+              </div>
+              <img src="elemen/" alt="Melon Golden" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="p-5 flex flex-col flex-grow space-y-3">
+              <div class="flex-grow">
+                <h3 class="text-lg font-bold text-forest-900 mb-1">Melon Premium</h3>
+                <p class="text-stone-500 text-xs line-clamp-2">Tekstur renyah, daging buah tebal, dan tingkat kemanisan brix tinggi.</p>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-stone-100">
+                <div class="flex flex-col">
+                  <span class="text-[9px] text-stone-400 uppercase font-semibold">Harga</span>
+                  <span class="text-base font-extrabold text-olive-dark">Rp - <span class="text-[10px] font-normal text-stone-500">/ buah</span></span>
+                </div>
+                <a href="https://wa.me/6289673117115?text=Halo%20Admin,%20saya%20mau%20pesan%20Melon%20Golden%20dong!" target="_blank" class="p-2.5 bg-emerald-100 text-emerald-700 hover:bg-emerald-600 hover:text-white rounded-lg transition duration-200">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produk 2: Melon -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-xl transition-all duration-300 group flex flex-col">
+            <div class="relative h-44 overflow-hidden bg-stone-100">
+               <div class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-amber-400 text-amber-900 text-[10px] font-bold rounded-full shadow-sm">
+                Terlaris
+              </div>
+              <img src="elemen/" alt="Melon Golden" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="p-5 flex flex-col flex-grow space-y-3">
+              <div class="flex-grow">
+                <h3 class="text-lg font-bold text-forest-900 mb-1">Melon Premium</h3>
+                <p class="text-stone-500 text-xs line-clamp-2">Tekstur renyah, daging buah tebal, dan tingkat kemanisan brix tinggi.</p>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-stone-100">
+                <div class="flex flex-col">
+                  <span class="text-[9px] text-stone-400 uppercase font-semibold">Harga</span>
+                  <span class="text-base font-extrabold text-olive-dark">Rp - <span class="text-[10px] font-normal text-stone-500">/ buah</span></span>
+                </div>
+                <a href="https://wa.me/6289673117115?text=Halo%20Admin,%20saya%20mau%20pesan%20Melon%20Golden%20dong!" target="_blank" class="p-2.5 bg-emerald-100 text-emerald-700 hover:bg-emerald-600 hover:text-white rounded-lg transition duration-200">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
+    <!-- Running Text -->
+    <section class="w-full bg-olive-dark text-stone-100 py-3 overflow-hidden border-t border-olive/30 mt-auto">
+      <div class="marquee-track flex items-center gap-10 text-[10px] sm:text-xs tracking-wider uppercase font-semibold">
+        <span>✦ Greenhouse Kasengan</span>
+        <span>✦ Rama Jaya Farm</span>
+        <span>✦ Kelompok 20 KKNT</span>
+        <span>✦ Moh Kamil</span>
+        <span>✦ Univ. Bahaudin Mudhary </span>
+        <span>✦ Informatika-Manajemen</span>
+        <span>✦ Greenhouse Kasengan</span>
+        <span>✦ Rama Jaya Farm</span>
+        <span>✦ Kelompok 20 KKNT</span>
+        <span>✦ Moh Kamil</span>
+        <span>✦ Univ. Bahaudin Mudhary </span>
+        <span>✦ Informatika-Manajemen</span>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-[#131e12] text-stone-400 text-[10px] sm:text-xs py-6 sm:py-8">
+      <div class="max-w-7xl mx-auto px-4 text-center space-y-1.5 sm:space-y-2">
+        <p>© 2026 Rama Jaya Farm. Greenhouse Desa Kasengan, Kec. Manding, Kab. Sumenep, Madura.</p>
+        <p class="text-emerald-400 font-medium">Inovasi Pertanian Modern untuk Ketahanan Pangan Lokal.</p>
+      </div>
+    </footer>
+    
+    <!-- Script agar link dari halaman lain otomatis meluncur ke bawah -->
+    <script>
+      window.addEventListener('load', function() {
+        if (window.location.hash) {
+          setTimeout(function() {
+            var target = document.querySelector(window.location.hash);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 200); // Menunda 0.2 detik sampai halaman benar-benar terbentuk
+        }
+      });
+    </script>
+    
+  </body>
+</html>

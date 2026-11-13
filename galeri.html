@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Galeri Kegiatan - Rama Jaya Farm</title>
+    <link rel="icon" type="image/png" href="elemen/logo_KKN.png" />
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              script: ["Caveat", "cursive"],
+            },
+            colors: {
+              forest: {
+                900: "#142618",
+                800: "#1b3420",
+                700: "#284e31",
+              },
+              olive: {
+                DEFAULT: "#526640",
+                dark: "#3f4f31",
+              },
+              warm: {
+                cream: "#FAF7F0",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .font-script-hero {
+        font-family: "Caveat", cursive;
+      }
+      .hero-text-shadow {
+        text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+      }
+      
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 35s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+  </head>
+  
+  <body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-olive selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+    
+    <!-- Hero Section -->
+    <!-- PERBAIKAN 1: Menambahkan class 'group' di tag section ini -->
+    <section class="group relative w-full h-[45vh] min-h-[350px] bg-[url('elemen/foto_1.jpeg')] bg-fixed bg-[center_65%] bg-cover flex flex-col overflow-hidden">
+      
+      <!-- PERBAIKAN 2: Menambahkan transisi dan perintah menghilang (group-hover:opacity-0) saat disentuh/di-hover -->
+      <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] transition-all duration-500 group-hover:opacity-0 z-0"></div>
+
+      <!-- BEGIN: NavigationBar -->
+      <header class="relative z-30 w-full pt-6 px-6 lg:px-14">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+          <a class="flex items-center gap-2 text-gray-900 hover:opacity-80 transition" href="index.html">
+            <span class="text-3xl lg:text-4xl font-bold font-script tracking-tight">Rama Jaya Farm</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-600 mb-2"></span>
+          </a>
+          
+          <div class="hidden md:flex items-center gap-9 text-gray-700 text-sm font-medium tracking-wide">
+            <a class="hover:text-forest-700 transition-colors duration-200" href="index.html">Home</a>
+            <a class="hover:text-forest-700 transition-colors duration-200" href="tentang_kami.html">Tentang Kami</a>
+            <a class="hover:text-forest-700 transition-colors duration-200" href="index.html#produk">Produk</a>
+            <!-- <a class="hover:text-forest-700 transition-colors duration-200" href="artikel.html">Artikel</a> -->
+            <a class="text-gray-900 font-bold transition-colors duration-200 border-b-2 border-emerald-600 pb-1" href="galeri.html">Galeri</a>
+          </div>
+          
+          <div class="flex items-center gap-5">
+            <a aria-label="Keranjang Belanja" class="relative p-2 text-gray-700 hover:text-forest-700 transition" href="index.html#produk">
+              <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+                <path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.189-.578-1.119-1.243l1.263-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <button aria-label="Buka Menu" class="md:hidden p-2 text-gray-700 hover:text-forest-700 transition" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+              <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+        
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 max-w-7xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200 shadow-xl overflow-hidden">
+          <a class="block px-5 py-3 text-gray-700 hover:text-forest-700 hover:bg-gray-50 text-sm font-medium transition border-b border-gray-100" href="index.html">Home</a>
+          <a class="block px-5 py-3 text-gray-700 hover:text-forest-700 hover:bg-gray-50 text-sm font-medium transition border-b border-gray-100" href="tentang_kami.html">Tentang Kami</a>
+          <a class="block px-5 py-3 text-gray-700 hover:text-forest-700 hover:bg-gray-50 text-sm font-medium transition border-b border-gray-100" href="index.html#produk">Produk</a>
+          <!-- <a class="block px-5 py-3 text-gray-700 hover:text-forest-700 hover:bg-gray-50 text-sm font-medium transition border-b border-gray-100" href="artikel.html">Artikel</a> -->
+          <a class="block px-5 py-3 text-forest-700 bg-emerald-50 text-sm font-bold transition" href="galeri.html">Galeri</a>
+        </div>
+      </header>
+      
+      <!-- Judul Halaman -->
+      <div class="relative z-20 flex-grow flex flex-col items-center justify-center text-center px-4 pointer-events-none">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight hero-text-shadow mb-3 transition-all duration-500">
+          Galeri Kegiatan
+        </h1>
+        <p class="text-gray-800 font-medium text-sm sm:text-base max-w-2xl hero-text-shadow transition-all duration-500">
+          Jejak langkah dan kontribusi mahasiswa KKNT Kelompok 20 di Greenhouse Desa Kasengan.
+        </p>
+      </div>
+      
+    </section>
+    
+    <!-- GRID GALERI MOSAIK TERBARU -->
+    <main class="w-full py-12 sm:py-24 flex-grow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <!-- Judul Seksi Galeri -->
+        <div class="flex flex-col items-center justify-center text-center mb-10 sm:mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 mb-3 shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span class="text-emerald-800 text-[10px] sm:text-xs font-bold uppercase tracking-widest">Dokumentasi KKNT</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">Rekam Jejak Lapangan</h2>
+          <div class="w-12 h-1.5 bg-emerald-500 rounded-full mt-4"></div>
+        </div>
+
+        <!-- Layout Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[220px] lg:auto-rows-[260px]">
+          
+          <!-- Foto 1 (Lebar 2 Kolom) - Koordinasi Tim -->
+          <div class="col-span-2 group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_4.jpeg" alt="Diskusi KKN" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
+              <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Koordinasi</span>
+              <h3 class="text-white text-base sm:text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Diskusi Proker Bersama Warga</h3>
+            </div>
+          </div>
+
+          <!-- Foto 2 (Tinggi 2 Baris) - Praktik Timbang -->
+          <div class="row-span-2 group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_5.jpeg" alt="Menimbang Panen" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Panen</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Penimbangan Selada</h3>
+            </div>
+          </div>
+
+          <!-- Foto 3 (Kotak Standar) - Cek Nutrisi -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_2.jpeg" alt="Cek Nutrisi" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Perawatan</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Cek Nutrisi Berkala</h3>
+            </div>
+          </div>
+
+          <!-- Foto 4 (Tinggi 2 Baris) - Observasi Tanaman Melon -->
+          <div class="row-span-2 group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_6.jpeg" alt="Observasi Tanaman" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Observasi</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Pengamatan Rambat Melon</h3>
+            </div>
+          </div>
+
+          <!-- Foto 5 (Kotak Standar) - Cek Akar -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_7.jpeg" alt="Cek Akar Selada" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Kualitas</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Pengecekan Akar</h3>
+            </div>
+          </div>
+
+          <!-- Foto 6 (Kotak Standar) - Diskusi Lesehan -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_3.jpeg" alt="Diskusi Santai" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Tim KKNT</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Evaluasi Harian</h3>
+            </div>
+          </div>
+
+          <!-- Foto 7 (Lebar 2 Kolom) - Tim Inti Depan Greenhouse -->
+          <div class="col-span-2 group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/foto_1.jpeg" alt="Tim KKNT" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
+              <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Tim KKNT 20</span>
+              <h3 class="text-white text-base sm:text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Formasi Lengkap Kelompok 20</h3>
+            </div>
+          </div>
+
+          <!-- Foto 8 (Kotak Standar) - Observasi Buah -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_8.jpeg" alt="Observasi Buah" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Edukasi</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Pengenalan Hama</h3>
+            </div>
+          </div>
+
+          <!-- Foto 9 (Kotak Standar) - Breafing Dalam Greenhouse -->
+          <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200">
+            <img src="elemen/kegiatan_9.jpeg" alt="Briefing" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6">
+              <span class="text-emerald-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">Koordinasi</span>
+              <h3 class="text-white text-sm sm:text-lg font-bold transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-150">Briefing Tugas Lapangan</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+    
+    <!-- Running Text -->
+    <section class="w-full bg-olive-dark text-stone-100 py-3 overflow-hidden border-t border-olive/30 mt-auto">
+      <div class="marquee-track flex items-center gap-10 text-[10px] sm:text-xs tracking-wider uppercase font-semibold">
+        <span>✦ Greenhouse Kasengan</span><span>✦ Rama Jaya Farm</span><span>✦ Kelompok 20 KKNT</span><span>✦ Moh Kamil</span><span>✦ Univ. Bahaudin Mudhary </span><span>✦ Informatika-Manajemen</span>
+        <span>✦ Greenhouse Kasengan</span><span>✦ Rama Jaya Farm</span><span>✦ Kelompok 20 KKNT</span><span>✦ Moh Kamil</span><span>✦ Univ. Bahaudin Mudhary </span><span>✦ Informatika-Manajemen</span>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-[#131e12] text-stone-400 text-[10px] sm:text-xs py-6 sm:py-8">
+      <div class="max-w-7xl mx-auto px-4 text-center space-y-1.5 sm:space-y-2">
+        <p>© 2026 Rama Jaya Farm. Greenhouse Desa Kasengan, Kec. Manding, Kab. Sumenep, Madura.</p>
+        <p class="text-emerald-400 font-medium">Inovasi Pertanian Modern untuk Ketahanan Pangan Lokal.</p>
+      </div>
+    </footer>
+    
+  </body>
+</html>
